@@ -2,20 +2,15 @@
 
 namespace EMarket.Models
 {
-    public class Sales
+    [Table("Categories")]
+    public class Category
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public int GoodsId { get; set; }
+        public int? RootId { get; set; }
 
-        public int Amount { get; set; }
-
-        public decimal GoodsPrice { get; set; }
-
-        public decimal FullPrice { get; set; }
-
-        public int UserId { get; set; }
+        public required string Name { get; set; }
 
         public DateTime Created { get; set; }
 
