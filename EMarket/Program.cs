@@ -20,6 +20,8 @@ namespace EMarket
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddTransient<GoodsRepository>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -46,6 +48,8 @@ namespace EMarket
                 .WithStaticAssets();
             app.MapRazorPages()
                .WithStaticAssets();
+
+
 
             app.Run();
         }
